@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HarryPottAR</string>
+    <string name="trolley_string">I\'m on time for once!</string>
+    <string name="destination_edittext_hint">Click here to enter destination</string>
+    <string name="google_directions_key">AIzaSyCoNxalL1fCmdSL7Yr7TnkwMiBd4dM2tbo</string>
+    <string name="camera_error">Camera Error</string>
+    <string name="qr_code">Portus</string>
+</resources>

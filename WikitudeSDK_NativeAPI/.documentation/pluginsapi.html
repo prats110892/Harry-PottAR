@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Wikitude SDK Android Native API 1.2.0 Documentation</title>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/docs.css">
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="css/github.min.css">
+    <link type="text/css" rel="stylesheet" href="css/default.min.css">
+    <link type="text/css" rel="stylesheet" href="css/lightbox.min-0.5.1.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery.treemenu.css">
+
+    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/highlight-8.6.min.js"></script>
+    <script type="text/javascript" src="js/lunr.min-0.5.11.js"></script>
+    <script type="text/javascript" src="js/deprecated.js"></script>
+    <script type="text/javascript" src="js/lightbox.min-0.5.1.js"></script>
+    <script type="text/javascript" src="js/jquery.treemenu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Every image referenced from a Markdown document
+            $("#content img").each(function() {
+                // Let's put a caption if there is one
+                if($(this).attr("alt"))
+                    $(this).wrap('<figure class="image"></figure>')
+                        .after('<figcaption>'+$(this).attr("alt")+'</figcaption>');
+                });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(isVersionDeprecated())
+                document.getElementById('deprecatedNote').style.display='block';
+                document.getElementById("documentationSelect").onchange = function() {
+                var selectedOption = this.value;
+                 console.log(selectedOption);
+                 window.top.location.href = "http://www.wikitude.com/developer/documentation/" + selectedOption;
+                }
+        });
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <a name="top" />
+         
+
+<div id="sidebar">
+    <div id="topnav">
+    <img src="images/150610_WT_SDK_Logo.png">
+    <h1><a href="">Documentation</a></h1>
+    <h2>Wikitude SDK Android Native API</h2>
+    
+    <div id="version">version: 1.2.0</div>
+    
+
+    
+    <select id="documentationSelect">
+        
+            <option value="android"  > Android </option>
+        
+            <option value="androidnative"  selected > Android Native API </option>
+        
+            <option value="phonegap"  > Cordova </option>
+        
+            <option value="epson"  > Epson </option>
+        
+            <option value="ios"  > iOS </option>
+        
+            <option value="iOSnative"  > iOS Native API </option>
+        
+            <option value="glass"  > Google Glass </option>
+        
+            <option value="vuzix"  > Vuzix </option>
+        
+            <option value="htmlcss"  > Web </option>
+        
+            <option value="titanium"  > Titanium </option>
+        
+            <option value="unity"  > Unity </option>
+        
+            <option value="xamarin"  > Xamarin </option>
+        
+            <option value=""  > --- </option>
+        
+            <option value="cloudrecognition"  > Cloud Recognition </option>
+        
+            <option value="targetsapi"  > Targets API </option>
+        
+    </select>
+    
+
+    <div id="deprecatedNote" class="warning" style="display:none;">Note you are viewing the documentation of a deprecated version. Please check <a href="http://www.wikitude.com/developer/documentation">www.wikitude.com/developer/documentation</a></div>
+
+    </div>
+
+    <input id="showNav" class="toggleNav" type="checkbox">
+    <label class="showNavLbl" for="showNav">Show Navigation</label>
+    <label class="hideNavLbl" for="showNav">Hide Navigation</label>
+
+    <div id="mainnav">
+    <form action="search.html"><input id="search" type="text" placeholder="Search documentation" name="q" /></form>
+    <nav id="toc">
+        
+    <ul>
+    
+        <li>
+            <a href="gettingstartedandroidnative.html#getting-started">Getting started</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="setupguideandroidnative.html#setup-guide-android-native-api">Setup Guide Android Native API</a>
+            
+        </li>
+    
+        <li>
+            <a href="supporteddevicesandroid.html#supported-android-devices">Supported Android Devices</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#how-to-obtain-a-free-trial-license">How to obtain a free trial license</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#where-should-i-enter-the-license-key">Where should I enter the license key</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="samplesnative.html#examples">Examples</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="clientrecognitionnative.html#client-recognition">Client Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionnative.html#cloud-recognition">Cloud Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="renderingnative.html#rendering">Rendering</a>
+            
+        </li>
+    
+        <li>
+            <a href="pluginsapi.html#plugins-api">Plugins API</a>
+            
+        </li>
+    
+        <li>
+            <a href="hardwarecontrolnative.html#camera-controls">Camera Controls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="toolsnative.html#wikitude-2d-tracking">Wikitude 2D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="targetmanagement.html#target-management">Target Management</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetguide.html#best-practice-for-target-images">Best practice for target images</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetimages.html#target-images">Target Images</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#wikitude-3d-tracking">Wikitude 3D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="3dtracking.html#about-wikitude-3d-tracking">About Wikitude 3D Tracking</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#license">License</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#limitations-of-the-wikitude-3d-tracking-beta">Limitations of the Wikitude 3D Tracking Beta</a>
+            
+        </li>
+    
+        <li>
+            <a href="trackingmap3d.html#creating-3d-tracking-maps">Creating 3D Tracking Maps</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking-guidelines.html#3d-tracking-guidelines-and-best-practices">3D Tracking Guidelines and best practices</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#wikitude-cloud-recognition">Wikitude Cloud Recognition</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#general-definitions">General Definitions</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#getting-started-with-the-cloud-recognition-service">Getting Started with the Cloud Recognition Service</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#authentication">Authentication</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#quota-and-limits">Quota and Limits</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#your-first-target-collections">Your first Target Collections</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#add-target-images">Add Target Images</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-cloud-archive">Generate a Cloud Archive</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-wtc-file">Generate a WTC file</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#additional-calls">Additional calls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate">Migrate</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate-from-10-to-11">Migrate from 1.0 to 1.1</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#reference">Reference</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="referenceandroidnative.html#android-native-api-javadocs">Android Native API JavaDocs</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#cloud-recognition-manager-api">Cloud Recognition Manager API</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-android-native-api-release-notes">Wikitude SDK Android Native API Release Notes</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-5">Wikitude SDK 5</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+</ul>
+
+    </nav>
+    
+    <nav id="links">
+        <ul>
+            
+        </ul>
+    </nav>
+    
+    </div>
+</div>
+        <div id="content">
+            <h2 id="plugins-api">Plugins API</h2>
+<p>This guide consists of multiple sections, first we discuss Wikitude SDK Plugins in general, than we talk about platform specifics and how to register a plugin with the Wikitude SDK and then we go through each of the sample plugins included with the Wikitude Example Applications.</p>
+<ol>
+<li><a href="#about">About Wikitude SDK Plugins</a></li>
+<li><a href="#platformspecifics">Platform Specifics</a></li>
+<li><a href="#registerplugin">Registering Plugins</a></li>
+<li><a href="#barcode">QR &amp; Barcode Plugin</a></li>
+<li><a href="#facedetection">Face Detection Plugin</a></li>
+</ol>
+<p><a id="about"></a></p>
+<h3 id="about-wikitude-sdk-plugins">About Wikitude SDK Plugins</h3>
+<p>Technically a plugin is a class, either written in C++ or Java, that is derived from the Wikitude Plugin base class. Beside lifecycle handling and options to enable and disable the plugin, the Plugin class has four main methods that you can override <code>cameraFrameAvailable</code> which is called each time the camera has a new frame, <code>update</code> which is called after each image recogntion cycle as well as &#39;startRender&#39; and &#39;endRender&#39; which are called before and after the Wikitude SDK does its rendering.</p>
+<p>The most important thing to remember when working with plugins is that they need to have a unique identifier! If the attempt is made to register a plugin with an identifier that is already known to the Wikitude SDK, the register method call will return false.</p>
+<h3 id="plugin-base-class">Plugin Base Class</h3>
+<pre><code>class Plugin {
+   public:
+      Plugin(std::string identifier_);
+      ~Plugin();
+      string getIdentifier() const; // returns a unique plugin identifier
+      bool processesColorCameraFrames(); // returns true if the plugins wants to process color frames instead of bw
+
+      void setEnabled(bool enabled_);
+      bool isEnabled();
+
+      string callJavaScript(string javaScriptSnippet); // evaluates the given JavaScript snippet in the currently loaded ARchitect World context.
+
+   protected:
+      void initialize(); // called when the plugin is initially added to the Wikitude SDK
+      void pause(); // called when the Wikitude SDK is paused e.g. the application state changes from active to background
+      void resume(uint pausedTime_); // called when the Wikitude SDK resumes e.g. from background to active state. pausedTime represents the time in milliseconds that the plugin was not updated.
+      void destroy(); // called when the plugin is removed from the Wikitude SDK
+
+      void cameraFrameAvailable(const Frame&amp;; cameraFrame_); // called each time the camera has a new frame
+      void update(const vector&lt;RecognizedTarget&gt; recognizedTargets_); // called each time the Wikitude SDK renders a new frame
+
+      void startRender(); // called before any Wikitude SDK internal rendering is done
+      void endRender(); // called right after any Wikitude SDK internal rendering is done
+
+   protected:
+      string      _identifier;
+      bool        _enabled;
+};
+</code></pre><p>With those methods in place your plugin will be able to read the full camera image for your own purpose, where the YUV image is also processed in wikitude’s computer vision engine.</p>
+<h3 id="information-about-recognized-targets">Information about Recognized Targets</h3>
+<p>In case you have the wikitude SDK running with ongoing image recognition, the plugin API will populate the <code>RecognizedTarget</code> in the <code>update</code> method once an image has been recognized. The plugin can then work with class RecognizedTarget, which wraps the details of the target image in the camera view. With that you can read out the pose of the target image and use it for your purposes. Additionally the call contains the calculated distance to the recognized target</p>
+<pre><code>class RecognizedTarget {
+   public:
+      const string&amp;    getIdentifier() const; // the identifier of the target. The identifier is defined when the target is added to a target collection
+      const Mat4&amp;      getModelViewMatrix() const; // the model view matrix that defines the transformation of the target in the camera frame (translation, rotation, scale)
+      const Mat4&amp;      getProjectionMatrix() const;
+      const float      getDistanceToCamera() const; // represents the distance from the target to the camera in millimeter
+};
+</code></pre><p>Passing values from within the plugin to the JavaScript part of your augmented reality experience is done via the <code>addToJavaScriptQueue()</code> method of the Plugin class. Using this function will execute any JavaScript code in the context of your augmented reality experience.</p>
+<p><a id="platformspecifics"></a></p>
+<h3 id="platform-specifics">Platform Specifics</h3>
+<p>To be able to use a C++ Wikitude plugin on Android, it is necessary to create a binary from the C++ code for each supported CPU architecture. To make this process as easy as possible we prepared an Android NDK make file and and some template code which passes your plugin to the Wikitude SDK. In the following section we discuss how you need to adapt these templates so they&#39;ll work for your plugin. </p>
+<p>Please note that if you would like to use multiple C++ plugins in your app, you will need to package all plugins in one shared library. This is necessary because we use JNI to register C++ plugins with the Wikitude SDK and the symbol to do that has to be unique.</p>
+<h3 id="android-c-wikitude-plugin-library-build">Android C++ Wikitude Plugin Library Build</h3>
+<p>All files needed are located under the folder PluginBuilder in the Wikitude SDK Android package.
+If you didn&#39;t setup the Android NDK yet, please follow the <a href="https://developer.android.com/intl/ja/ndk/guides/setup.html">official guide</a>.</p>
+<p>Let&#39;s take a look at the Android.mk file, located under <code>SDKPackageRoot/PluginBuilder/jni</code>. The first thing we do is declare a variable containing the path to the source files relative to the make files location and set <code>LOCAL_PATH</code> to this location. We define where all include files are located and which files need to be compiled. Since our Example Plugin uses Android log we link android native log.</p>
+<pre><code>LOCAL_PATH := $(call my-dir)/..
+SRC_DIR := $(LOCAL_PATH)/src
+
+include $(CLEAR_VARS)
+
+LOCAL_PATH := $(SRC_DIR)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := samplePlugin
+
+LOCAL_C_INCLUDES := $(SRC_DIR)
+LOCAL_SRC_FILES := __YOUR_PLUGIN__.cpp JniRegistration.cpp Plugin.cpp
+
+LOCAL_LDLIBS += -llog
+
+include $(BUILD_SHARED_LIBRARY)
+</code></pre><p>The PluginLoader/src folder contains various src files which are needed so your plugin will compile and link correctly. Please don&#39;t modify any of them except the <code>__YOUR_PLUGIN__.h</code> and <code>__YOUR_PLUGIN__.cpp</code>. One other file that needs some slight modifications is <code>JniRegistration.cpp</code> shown below. Adapt the include directive and the constructor call to your plugin name and if you would like to use multiple C++ plugins, feel free to add more plugins to the <code>cPluginsArray</code> array but adjust the <code>numberOfPlugins</code> count accordingly.</p>
+<p>If you packaged multiple plugins in one shared library but would like to instantiate only a subset of those plugins you can pass an identifier to this method when loading the library from Java. You can then decide which plugins to create depending on the value of <code>jPluginName</code>.</p>
+<pre><code>#include &lt;jni.h&gt;
+
+#include &quot;Plugin.h&quot;
+#include &quot;__YOUR_PLUGIN__.h&quot;
+
+extern &quot;C&quot; JNIEXPORT jlongArray JNICALL Java_com_wikitude_architect_PluginManager_createNativePlugins(JNIEnv *env, jobject thisObj, jstring jPluginName) {
+
+    int numberOfPlugins = 1;
+
+    jlong cPluginsArray[numberOfPlugins];
+    cPluginsArray[0] = (jlong) new __YOUR_PLUGIN__(&quot;com.example.plugin&quot;);
+
+    jlongArray jPluginsArray = env-&gt;NewLongArray(numberOfPlugins);
+    if (jPluginsArray != nullptr) {
+        env-&gt;SetLongArrayRegion(jPluginsArray, 0, numberOfPlugins, cPluginsArray);
+    }
+
+    return jPluginsArray;
+}
+</code></pre><p>To build the plugin binary files, navigate to the jni folder and call ndk-build. A libs folder will be created containing libraries for arm7, arm64 and intel. Copy the contents of the libs folder to <code>YourProjectRoot/app/src/main/jniLibs</code>. </p>
+<p><a id="registerplugin"></a></p>
+<h3 id="registering-plugins">Registering Plugins</h3>
+<h3 id="register-c-plugin">Register C++ Plugin</h3>
+<p>To register a C++ plugin with the Wikitude Native SDK, get the <code>PluginManager</code> from the <code>WikitudeSDK</code> instance and call <code>registerNativePlugin</code> passing the name of your library. Do not add <code>lib</code> in front of the name or add the <code>.so</code> extension. If you register your Plugin in the <code>onCreate</code> method of your activity, please also make sure to call the <code>onCreate</code> method of the <code>WikitudeSDK</code> first. The following snippet comes from the <code>BarcodePluginActivity</code> of the Wikitude Native SDK Example application.</p>
+<pre><code class="lang-java">@Override
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+    _wikitudeSDK.onCreate(getApplicationContext(), startupConfiguration);
+    ...
+    _wikitudeSDK.getPluginManager().registerNativePlugins(&quot;barcodePlugin&quot;);
+}
+</code></pre>
+<h3 id="register-java-plugin">Register Java Plugin</h3>
+<p>To register a Java plugin with the Wikitude Native SDK, get the <code>PluginManager</code> from the <code>WikitudeSDK</code> instance and call <code>registerPlugin</code> passing an instance of your <code>Plugin</code>.</p>
+<pre><code class="lang-java">@Override
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+    _wikitudeSDK.onCreate(getApplicationContext(), startupConfiguration);
+    ...
+    _wikitudeSDK.getPluginManager().registerPlugin(new MyPlugin());
+}
+</code></pre>
+<p><a id="barcode"></a></p>
+<h3 id="barcode-and-qr-code-reader">Barcode and QR code reader</h3>
+<p>This samples shows a full implementation of the popular barcode library ZBar into the Wikitude SDK. As ZBar is licensed under LGPL2.1 this sample can also be used for other projects.</p>
+<p>ZBar is an open source software suite for reading bar codes from various sources, such as video streams, image files and raw intensity sensors. It supports many popular symbologies (types of bar codes) including EAN-13/UPC-A, UPC-E, EAN-8, Code 128, Code 39, Interleaved 2 of 5 and QR Code.</p>
+<p>In the <code>BarcodePluginActivity.onCreate</code> method we register the bar code C++ plugin by getting the <code>PluginManager</code> from the Wikitude SDK and calling <code>registerNativePlugins</code> passing the name of the native library containing our C++ plugin. Right after that we call initNative(), which we declared as a native method and implement in the C++ plugin, to initialize the JavaVM pointer hold by the native plugin. We also implement the method <code>onBarcodeDetected</code> to display the contents of the scanned bar code. We&#39;ll later call this method from the bar code plugin. </p>
+<pre><code class="lang-java">public class BarcodePluginActivity extends Activity implements ClientTrackerEventListener, ExternalRendering {
+
+    private static String _codeContent;
+    ...
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ...
+        _wikitudeSDK.getPluginManager().registerNativePlugins(&quot;barcodePlugin&quot;);
+        initNative();
+    }
+
+    ...
+
+    public void onBarcodeDetected(final String codeContent_) {
+        _codeContent = codeContent_;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                EditText targetInformationTextField = (EditText) findViewById(R.id.barcode_plugin_info_field);
+                targetInformationTextField.setText(codeContent_, TextView.BufferType.NORMAL);
+                targetInformationTextField.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+    private native void initNative();
+}
+</code></pre>
+<p>Now let&#39;s move to the plugins C++ code. First we&#39;ll have a look at the <code>BarcodePlugin.h</code> file. To create the bar code plugin we derive our <code>BarcodePlugin</code> class from <code>wikitude::sdk::Plugin</code> and override <code>initialize</code>, <code>destroy</code>, <code>cameraFrameAvailable</code> and <code>update</code>. We also declare the following member variables: <code>_worldNeedsUpdate</code>, <code>_image</code>, <code>_imageScanner</code> and <code>_methodId</code>. The <code>_worldNeedsUpdate</code> variable will later be used as an indicator if we need to update the <code>View</code>, <code>_image</code> and <code>_imageScanner</code> are classes from <code>zBar</code> which we&#39;ll use to scan for bar codes and <code>_methodId</code> will hold the method id of the <code>onBarcodeDetected</code> Java method. </p>
+<pre><code class="lang-c++">extern JavaVM* pluginJavaVM;
+
+class BarcodePlugin : public wikitude::sdk::Plugin {
+public:
+    BarcodePlugin(int cameraFrameWidth, int cameraFrameHeight);
+    virtual ~BarcodePlugin();
+
+    virtual void initialize();
+    virtual void destroy();
+
+    virtual void cameraFrameAvailable(const wikitude::sdk::Frame&amp; cameraFrame_);
+    virtual void update(const std::list&lt;wikitude::sdk::RecognizedTarget&gt;&amp; recognizedTargets_);
+
+
+protected:
+    int                             _worldNeedsUpdate;
+
+    zbar::Image                     _image;
+    zbar::ImageScanner              _imageScanner;
+
+private:
+    jmethodID                       _methodId;
+};
+</code></pre>
+<p>We declare two variables in the global namespace one which will hold a pointer to the JavaVM and one which will hold a reference to our activity. To initialize those two variables we declared the <code>initNative</code> native method in the <code>BarcodeActivity</code> and implement it like in the following code snippet. All we do is get the pointer to the <code>JavaVM</code> from the <code>JNIEnv</code> and create a new global reference to the calling activity instance.</p>
+<pre><code class="lang-c++">JavaVM* pluginJavaVM;
+jobject activityObj;
+
+extern &quot;C&quot; JNIEXPORT void JNICALL
+Java_com_wikitude_samples_plugins_BarcodePluginActivity_initNative(JNIEnv* env, jobject obj)
+{
+    env-&gt;GetJavaVM(&amp;pluginJavaVM);
+    activityObj = env-&gt;NewGlobalRef(obj);
+}
+</code></pre>
+<p>In the constructor we set <code>_worldNeedsUpdate</code> to zero indicating that there is no update necessary and initialize the <code>zBar::Image</code> member variable passing its constructor the width and height of the camera frame, the image format of <code>Y800</code>, set its data pointer to null and the data length to zero. We use the JavaVM to create an instance of <code>JavaVMResource</code> which is a helper class to manage the JavaVM, we provided in the file <code>jniHelper.cpp</code>. Next we get the Java environment from the <code>JavaVMResource</code> and initialize the <code>_methodId</code> member. In the destructor we delete the global reference to the activity object.</p>
+<pre><code class="lang-c++">BarcodePlugin::BarcodePlugin(int cameraFrameWidth, int cameraFrameHeight) :
+Plugin(&quot;com.wikitude.ios.barcodePluign&quot;),
+_worldNeedsUpdate(0),
+_image(cameraFrameWidth, cameraFrameHeight, &quot;Y800&quot;, nullptr, 0)
+{
+    JavaVMResource vm(pluginJavaVM);
+    jclass clazz = vm.env-&gt;FindClass(&quot;com/wikitude/samples/plugins/BarcodePluginActivity&quot;);
+    _methodId = vm.env-&gt;GetMethodID(clazz, &quot;onBarcodeDetected&quot;, &quot;(Ljava/lang/String;)V&quot;);
+}
+
+BarcodePlugin::~BarcodePlugin()
+{
+    JavaVMResource vm(pluginJavaVM);
+    vm.env-&gt;DeleteGlobalRef(activityObj);
+}
+</code></pre>
+<p>In the <code>initialize</code> method we configure the <code>zbar::ImageScanner</code> by calling <code>setConfig</code>, enabling all supported bar codes. If you are only interested in one or some particular types of codes, first disabling all bar code types and manually enabling each particular type would be the better idea. That way performance could be greatly improved.</p>
+<pre><code class="lang-c++">void BarcodePlugin::initialize() {    
+    _imageScanner.set_config(zbar::ZBAR_NONE, zbar::ZBAR_CFG_ENABLE, 1);
+}
+</code></pre>
+<p>We react to the <code>destroy</code> event by setting the current data pointer of the <code>zbar::Image</code> member to null and length to zero.</p>
+<pre><code class="lang-c++">void BarcodePlugin::destroy() {
+    _image.set_data(nullptr, 0);
+}
+</code></pre>
+<p>The last but most interesting methods are <code>cameraFrameAvailable</code> and <code>update</code>. In the <code>cameraFrameAvailable</code> method we set the data of our previously initialized <code>zbar::Image</code> member variable to the frame data we just received and the length of the data to frame width * frame height by calling <code>set_data</code>. We then start the scanning process by calling the <code>scan</code> method of our <code>zBar::ImageScanner</code> passing the <code>zBar::Image</code> member instance. The <code>zBar::ImageScanner::scan</code> method returns the number of detected bar codes in the image frame, we save this number in a local variable <code>n</code>. If <code>n</code> is not equal to the result of the last frame, which we saved to <code>_worldNeedsUpdate</code> member variable, we know there was a new bar code detected (meaning there was no bar code in the last frame) or that there was a bar code in the last frame and now there isn&#39;t. When that&#39;s the case, we do another check if there really was a bar code detected this frame and if there was we call the <code>onBarcodeDetected</code> Java method passing the code content.</p>
+<pre><code class="lang-c++">void BarcodePlugin::cameraFrameAvailable(const wikitude::sdk::Frame&amp; cameraFrame_) {
+    int frameWidth = cameraFrame_.getSize().width;
+    int frameHeight = cameraFrame_.getSize().height;
+
+    _image.set_data(cameraFrame_.getLuminanceData(), frameWidth * frameHeight);
+
+    int n = _imageScanner.scan(_image);
+
+    if ( n != _worldNeedsUpdate ) {
+        if ( n ) {
+
+            zbar::Image::SymbolIterator symbol = _image.symbol_begin();
+            JavaVMResource vm(pluginJavaVM);
+            jstring codeContent = vm.env-&gt;NewStringUTF(symbol-&gt;get_data().c_str());
+            vm.env-&gt;CallVoidMethod(activityObj, _methodId, codeContent);
+
+        }
+    }
+
+    _worldNeedsUpdate = n;
+}
+</code></pre>
+<p><a id="facedetection"></a></p>
+<h3 id="face-detection">Face Detection</h3>
+<p>This samples shows how to add face detection to your Wikitude augmented reality experience using OpenCV.</p>
+<p>The Face Detection Plugin Example consists of the C++ classes <code>FaceDetectionPlugin</code>, <code>FaceDetectionPluginConnector</code> and the Java class <code>FaceDetectionPluginActivity</code>. We will use OpenCV to detect faces in the current camera frame and OpenGL calls in Java to render a frame around detected faces. </p>
+<p>The <code>FaceDetectionPluginConnector</code> acts as our interface between native code and Java and contains some JNI code, since JNI is not the focus of this example we won&#39;t go into detail about the implementation. If you would like to have a look at the complete code feel free to browse the source code in the Wikitude SDK release package.</p>
+<p>We implement to Java native methods <code>initNative</code> and <code>setFlipFlag</code>. First will be used to initialize the plugin with the path to an OpenCV database, second will be used to notify the Plugin about orientation changes of the device. The other methods <code>faceDetected</code>, <code>faceLost</code>, <code>projectionMatrixChanged</code> and <code>renderDetectedFaceAugmentation</code> will be called by the Plugin to update the Java Android Activity, which controls the rendering. </p>
+<pre><code class="lang-c++">extern &quot;C&quot; JNIEXPORT void JNICALL
+Java_com_wikitude_samples_plugins_FaceDetectionPluginActivity_initNative(JNIEnv* env, jobject obj, jstring databasePath_)
+{
+    ...
+}
+
+extern &quot;C&quot; JNIEXPORT void JNICALL
+Java_com_wikitude_samples_plugins_FaceDetectionPluginActivity_setFlipFlag(JNIEnv* env, jobject obj, jint flag)
+{
+    ...
+}
+
+... ctor / dtor ...
+
+void FaceDetectionPluginConnector::faceDetected(const float *modelViewMatrix)
+{
+...
+}
+
+void FaceDetectionPluginConnector::faceLost()
+{
+...
+}
+
+void FaceDetectionPluginConnector::projectionMatrixChanged(const float *projectionMatrix)
+{
+...
+}
+
+void FaceDetectionPluginConnector::renderDetectedFaceAugmentation() {
+...
+}
+</code></pre>
+<p>Next we have a look at the <code>FaceDetectionPlugin</code> class. Again we we will leave out implementation details and focus on how we use the plugin itself. In the <code>cameraFrameAvailable</code> method we use OpenCV to detect faces in the current camera frame which the Wikitude SDK passes to the plugin. We call the observer which is an instance of the <code>FaceDetectionPluginConnector</code> to notify the Java activity about the result. The plugin base class defines <code>startRender</code> and <code>endRender</code>, depending on, if you would like to render on top of or below of all rendering the Wikitude SDK does, you choose one of them, or both to override. To render below all Wikitude rendering we choose <code>startRender</code> and again call the <code>FaceDetectionPluginConnector</code> instance which in turn calls the Android activity. Since we do not react on the result of the Wikitude SDK image recognition we leave <code>update</code> blank. </p>
+<pre><code class="lang-c++">
+... ctor/dtor ...
+
+void FaceDetectionPlugin::cameraFrameAvailable(const wikitude::sdk::Frame&amp; cameraFrame_) {
+
+    ... Control Open CV ...
+
+    if ( _result.size() ) {
+        convertFaceRectToModelViewMatrix(croppedImg, _result.at(0));
+        _observer-&gt;faceDetected(_modelViewMatrix);
+    } else {
+        _observer-&gt;faceLost();
+    }
+}
+
+void FaceDetectionPlugin::startRender() {
+    _observer-&gt;renderDetectedFaceAugmentation();
+}
+
+void FaceDetectionPlugin::update(const std::list&lt;wikitude::sdk::RecognizedTarget&gt; &amp;recognizedTargets_) {
+}
+
+... other internally used methods ...
+</code></pre>
+<p>In the <code>FaceDetectionPluginActivity</code> we override <code>onCreate</code> and initialize the Plugin by calling the initNative native method, passing the path to the database file. We also override <code>onConfigurationChanged</code> to get notify about device orientation changes and again notify the Plugin about orientation changes by calling the <code>setFlipFlag</code> native method. To render a frame around detected faces we created an instance of <code>GLRendererFaceDetectionPlugin</code> class which takes care of rendering a rectangle around faces and all targets of the also active <code>ClientTracker</code>. When the plugin detects, looses or recalculated the projection matrix it will call the appropriate Java methods which we use to update the <code>Renderer</code> instance. If the Plugin decides it is time to render a frame around a detected face it will call <code>renderDetectedFaceAugmentation</code>. Since the plugin will only call this method in the <code>startRender</code> method, we know the current thread is the OpenGL thread and are able to dispatch OpenGL calls.</p>
+<pre><code class="lang-java">
+... imports ...
+
+public class FaceDetectionPluginActivity extends Activity implements ClientTrackerEventListener, ExternalRendering {
+
+    private WikitudeSDK _wikitudeSDK;
+    private GLRendererFaceDetectionPlugin _glRenderer;
+    private File _cascadeFile;
+    private RecognizedTarget _faceTarget = new RecognizedTarget();
+
+    ...
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        ... init native sdk ...
+
+        ... copy database file ...
+
+        initNative(_cascadeFile.getAbsolutePath());
+
+        ...
+
+        setInterfaceOrientationInPlugin();
+    }
+
+    ... other lifecycle events ...
+
+    private void setInterfaceOrientationInPlugin() {
+        ...
+        setFlipFlag(x);
+        ...
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setInterfaceOrientationInPlugin();
+    }
+
+    public void onFaceDetected(float[] modelViewMatrix) {
+        _faceTarget.viewMatrix = modelViewMatrix;
+        _glRenderer.setCurrentlyRecognizedFace(_faceTarget);
+    }
+
+    public void onFaceLost() {
+        _glRenderer.setCurrentlyRecognizedFace(null);
+    }
+
+    public void onProjectionMatrixChanged(float[] projectionMatrix) {
+        _faceTarget.projectionMatrix = projectionMatrix;
+        _glRenderer.setCurrentlyRecognizedFace(_faceTarget);
+    }
+
+    ... other Wikitude callbacks ...
+
+    private native void initNative(String casecadeFilePath);
+    private native void setFlipFlag(int flag);
+}
+</code></pre>
+<p>If you are interested in the implementation details of the <code>FaceDetectionPluginActivity</code> or the <code>StrokedRectangle</code> class, you can find both classes in our Wikitude SDK Example Application. </p>
+
+            <footer id="footer">
+                &copy; 2012 -2015 <a href="http://www.wikitude.com">Wikitude GmbH</a> · <a href="http://www.wikitude.com/imprint">Imprint</a>
+            </footer>  
+        </div>    
+    </div>
+
+    <!-- TO DO: Reactivate when problems with nav are fixed
+    <script>
+    $(function(){
+            $("#toc ul").treemenu({delay:300}).openActive();
+        });
+    </script>
+    -->
+
+</body>
+    <script>
+    var lightbox = new Lightbox();
+    lightbox.load();
+    </script>
+
+</html>

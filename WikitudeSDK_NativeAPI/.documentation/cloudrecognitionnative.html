@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Wikitude SDK Android Native API 1.2.0 Documentation</title>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/docs.css">
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="css/github.min.css">
+    <link type="text/css" rel="stylesheet" href="css/default.min.css">
+    <link type="text/css" rel="stylesheet" href="css/lightbox.min-0.5.1.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery.treemenu.css">
+
+    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/highlight-8.6.min.js"></script>
+    <script type="text/javascript" src="js/lunr.min-0.5.11.js"></script>
+    <script type="text/javascript" src="js/deprecated.js"></script>
+    <script type="text/javascript" src="js/lightbox.min-0.5.1.js"></script>
+    <script type="text/javascript" src="js/jquery.treemenu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Every image referenced from a Markdown document
+            $("#content img").each(function() {
+                // Let's put a caption if there is one
+                if($(this).attr("alt"))
+                    $(this).wrap('<figure class="image"></figure>')
+                        .after('<figcaption>'+$(this).attr("alt")+'</figcaption>');
+                });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(isVersionDeprecated())
+                document.getElementById('deprecatedNote').style.display='block';
+                document.getElementById("documentationSelect").onchange = function() {
+                var selectedOption = this.value;
+                 console.log(selectedOption);
+                 window.top.location.href = "http://www.wikitude.com/developer/documentation/" + selectedOption;
+                }
+        });
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <a name="top" />
+         
+
+<div id="sidebar">
+    <div id="topnav">
+    <img src="images/150610_WT_SDK_Logo.png">
+    <h1><a href="">Documentation</a></h1>
+    <h2>Wikitude SDK Android Native API</h2>
+    
+    <div id="version">version: 1.2.0</div>
+    
+
+    
+    <select id="documentationSelect">
+        
+            <option value="android"  > Android </option>
+        
+            <option value="androidnative"  selected > Android Native API </option>
+        
+            <option value="phonegap"  > Cordova </option>
+        
+            <option value="epson"  > Epson </option>
+        
+            <option value="ios"  > iOS </option>
+        
+            <option value="iOSnative"  > iOS Native API </option>
+        
+            <option value="glass"  > Google Glass </option>
+        
+            <option value="vuzix"  > Vuzix </option>
+        
+            <option value="htmlcss"  > Web </option>
+        
+            <option value="titanium"  > Titanium </option>
+        
+            <option value="unity"  > Unity </option>
+        
+            <option value="xamarin"  > Xamarin </option>
+        
+            <option value=""  > --- </option>
+        
+            <option value="cloudrecognition"  > Cloud Recognition </option>
+        
+            <option value="targetsapi"  > Targets API </option>
+        
+    </select>
+    
+
+    <div id="deprecatedNote" class="warning" style="display:none;">Note you are viewing the documentation of a deprecated version. Please check <a href="http://www.wikitude.com/developer/documentation">www.wikitude.com/developer/documentation</a></div>
+
+    </div>
+
+    <input id="showNav" class="toggleNav" type="checkbox">
+    <label class="showNavLbl" for="showNav">Show Navigation</label>
+    <label class="hideNavLbl" for="showNav">Hide Navigation</label>
+
+    <div id="mainnav">
+    <form action="search.html"><input id="search" type="text" placeholder="Search documentation" name="q" /></form>
+    <nav id="toc">
+        
+    <ul>
+    
+        <li>
+            <a href="gettingstartedandroidnative.html#getting-started">Getting started</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="setupguideandroidnative.html#setup-guide-android-native-api">Setup Guide Android Native API</a>
+            
+        </li>
+    
+        <li>
+            <a href="supporteddevicesandroid.html#supported-android-devices">Supported Android Devices</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#how-to-obtain-a-free-trial-license">How to obtain a free trial license</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#where-should-i-enter-the-license-key">Where should I enter the license key</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="samplesnative.html#examples">Examples</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="clientrecognitionnative.html#client-recognition">Client Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionnative.html#cloud-recognition">Cloud Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="renderingnative.html#rendering">Rendering</a>
+            
+        </li>
+    
+        <li>
+            <a href="pluginsapi.html#plugins-api">Plugins API</a>
+            
+        </li>
+    
+        <li>
+            <a href="hardwarecontrolnative.html#camera-controls">Camera Controls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="toolsnative.html#wikitude-2d-tracking">Wikitude 2D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="targetmanagement.html#target-management">Target Management</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetguide.html#best-practice-for-target-images">Best practice for target images</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetimages.html#target-images">Target Images</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#wikitude-3d-tracking">Wikitude 3D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="3dtracking.html#about-wikitude-3d-tracking">About Wikitude 3D Tracking</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#license">License</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#limitations-of-the-wikitude-3d-tracking-beta">Limitations of the Wikitude 3D Tracking Beta</a>
+            
+        </li>
+    
+        <li>
+            <a href="trackingmap3d.html#creating-3d-tracking-maps">Creating 3D Tracking Maps</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking-guidelines.html#3d-tracking-guidelines-and-best-practices">3D Tracking Guidelines and best practices</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#wikitude-cloud-recognition">Wikitude Cloud Recognition</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#general-definitions">General Definitions</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#getting-started-with-the-cloud-recognition-service">Getting Started with the Cloud Recognition Service</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#authentication">Authentication</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#quota-and-limits">Quota and Limits</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#your-first-target-collections">Your first Target Collections</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#add-target-images">Add Target Images</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-cloud-archive">Generate a Cloud Archive</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-wtc-file">Generate a WTC file</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#additional-calls">Additional calls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate">Migrate</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate-from-10-to-11">Migrate from 1.0 to 1.1</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#reference">Reference</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="referenceandroidnative.html#android-native-api-javadocs">Android Native API JavaDocs</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#cloud-recognition-manager-api">Cloud Recognition Manager API</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-android-native-api-release-notes">Wikitude SDK Android Native API Release Notes</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-5">Wikitude SDK 5</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+</ul>
+
+    </nav>
+    
+    <nav id="links">
+        <ul>
+            
+        </ul>
+    </nav>
+    
+    </div>
+</div>
+        <div id="content">
+            <h2 id="cloud-recognition">Cloud Recognition</h2>
+<p>This example shows how to recognize images on a cloud server and then overlay it with augmentations utilizing the <code>CloudTracker</code> class. </p>
+<p>For a better understanding, here are some terms that will be used in the following and other sections of this documentation related to vision-based augmented reality.</p>
+<ul>
+<li><p><strong>Target</strong>: An image and its associated extracted data that is used to recognize an image.</p>
+</li>
+<li><p><strong>Target Collection</strong>: A group of <code>targets</code> that are searched together. Think of it as a directory, which contains all your images you want to search. The Wikitude SDK can work with two different sorts of <code>Target Collections</code></p>
+<ul>
+<li>On-device Target Collection: a static <code>wtc</code> file containing the extracted data of your images. Can consist of up to 1,000 images.</li>
+<li>Cloud Target Collection: A target collection stored on the Wikitude server. See <code>Cloud Archive</code> below. Can consist of up to 50,000 images.</li>
+</ul>
+</li>
+<li><p><strong>Cloud Archive</strong>: An archive stored on the server that is optimized for cloud-based recognition. It is generated from a <code>Target Collection</code> and is used in combination with <code>CloudTracker</code> . </p>
+</li>
+<li><p><strong>CloudTracker</strong>: Instead of analysing and computing the live camera feed directly on the device like the <code>ClientTracker</code>, the <code>CloudTracker</code> will send the image(s) taken by the camera to the Wikitude Cloud Recognition server. The server will then do the hard work of trying to match the image with your targets in the specified cloud archive. Beside the benefit of searching in large image database using the <code>CloudTracker</code>  instead of <code>ClientTracker</code>  has also a positive impact on the general performance in most cases. Especially when using a large target collection and on older devices.</p>
+</li>
+</ul>
+<p>For both Cloud Recognition samples below we will use external rendering if you don&#39;t know what that means please go through the section on <a href="renderingnative.html">rendering</a> before starting here.</p>
+<p>The <code>CloudTracker</code> is able to run in two modes, we call them on-click and continuous. In On-Click mode a single recognition cycle will be executed, in continuous mode the recognition will be started in a variable interval. You can find both examples discussed in the following in our sample application under the package <code>com.wikitude.recognition.cloud</code>.</p>
+<h4 id="regional-server-endpoints">Regional server endpoints</h4>
+<p>Before we get started please note that you have to choose which regional-distributed Wikitude server the SDK should contact.</p>
+<p>The cloud recognition server region can be selected by calling <code>setCloudRecognitionServerRegion</code> of the <code>TrackerManager</code>. Every <code>CloudTracker</code> created after this call, will use the chosen region. In the following code snippet we will change the Cloud Recognition server location from the default setting of Europe to China.</p>
+<pre><code class="lang-java">    _wikitudeSDK.getTrackerManager().setCloudRecognitionServerRegion(TrackerManager.ServerRegion.CHINA);
+</code></pre>
+<p><a id="OnClickCloudRecognition"></a></p>
+<h3 id="on-click-cloud-recognition">On-Click Cloud Recognition</h3>
+<p>We will now go through the class <code>OnClickCloudTrackingActivity</code> of our sample application, starting with the <code>onCreate</code> method. In <code>onCreate</code> after creating an instance of the <code>WikitudeSDK</code>, we obtain the <code>TrackerManager</code> and call <code>create2dCloudTracker</code> passing our authentication token and target collection id. On the <code>CloudTracker</code> instance returned by the <code>TrackerManager</code> we call <code>registerTrackerEventListener</code> passing <code>this</code> to register our activity as a listener for this particular <code>CloudTracker</code>. For this to work, we implemented <code>CloudTrackerEventListener</code> on our activity.</p>
+<pre><code class="lang-java">public class OnClickCloudTrackingActivity extends Activity implements CloudTrackerEventListener, ExternalRendering {
+
+    ...
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ...
+        _wikitudeSDK.onCreate(getApplicationContext(), startupConfiguration);
+        _cloudTracker = _wikitudeSDK.getTrackerManager().create2dCloudTracker(&quot;b277eeadc6183ab57a83b07682b3ceba&quot;, &quot;54e4b9fe6134bb74351b2aa3&quot;);
+        _cloudTracker.registerTrackerEventListener(this);
+    }
+</code></pre>
+<p><code>CloudTrackerEventListener</code> defines callbacks which enable the <code>CloudTracker</code> to communicate its status. On one hand we receive notifications about the loading process and on the other hand we receive updates concerning the tracking process. Let&#39;s first have a look at the methods concerning the loading process. The method <code>onTrackerFinishedLoading</code> will be called, when the <code>CloudTracker</code> was successfully loaded and initialized. In this example we do not have a reason to react on that, but you could for example do some initializations to be ready when the <code>CloudTracker</code> recognizes a target. The <code>onTrackerLoadingError</code> method will be called when there was a problem loading the <code>CloudTracker</code>. We&#39;ll receive an errorMessage, containing more information about the problem. For debugging purposes we just log the error for now. In a real world project, were you already tested your app and know it won&#39;t be some small mistake like for example a wrong target collection id, you probably want to remove the log and for example try to load the <code>CloudTracker</code> again.</p>
+<pre><code class="lang-java">
+    @Override
+    public void onTrackerFinishedLoading(final CloudTracker cloudTracker_) {
+    }
+
+    @Override
+    public void onTrackerLoadingError(final CloudTracker cloudTracker_, final String errorMessage_) {
+        Log.d(TAG, &quot;onTrackerLoadingError: &quot; + errorMessage_);
+    }
+</code></pre>
+<p>We had a look at the loading process callbacks above. Now let&#39;s move on to the callbacks concerning the tracking process. The methods <code>onTargetRecognized</code> as well as <code>onRecognitionSuccessful</code> will be called when the <code>CloudTracker</code> first recognizes one of your targets. In this example we do not react on the <code>onTargetRecognized</code> call, because we do not care which of our targets were recognized, but again in a real world example you could prepare your renderer for the target to be tracked. The <code>onRecognitionSuccessful</code> method is unique to the <code>CloudTracker</code> and not available in the <code>ClientTracker</code> interface. It will be passed a <code>JSONObject</code> containing meta information you defined for this target when creating your Cloud Archive. For now we will just display the contents in a standard <code>Edittext</code> ui component so you can have a look.</p>
+<p>After the call to <code>onTargetRecognized</code> the next calls will be to <code>onTracking</code>. On this calls the <code>CloudTracker</code> will pass an instance of the <code>RecognizedTarget</code> class containing information about the current target. Besides general information about the target like the name of the target and distance to the target, this object also contains matrices which define the location of the target in the current frame, we pass the object to our renderer instance so it can be used to render something on or around the target. If the &#39;CloudTracker&#39; isn&#39;t able to track the current target any longer it will call the <code>onTargetLost</code> method. In this case we will remove the last <code>RecognizedTarget</code> object from our renderer since it won&#39;t be updated anymore until the <code>CloudTracker</code> recognizes a target again.</p>
+<p>The last method <code>onRecognitionFailed</code> will be called if the last recognition attempt was unsuccessful, in this case we will display an error message to the user so that she/he tries again.</p>
+<pre><code class="lang-java">    @Override
+    public void onTargetRecognized(final CloudTracker cloudTracker_, final String targetName_) {
+
+    }
+
+    @Override
+    public void onTracking(final CloudTracker cloudTracker_, final RecognizedTarget recognizedTarget_) {
+        _glRenderer.setCurrentlyRecognizedTarget(recognizedTarget_);
+    }
+
+    @Override
+    public void onTargetLost(final CloudTracker cloudTracker_, final String targetName_) {
+        _glRenderer.setCurrentlyRecognizedTarget(null);
+    }
+
+    @Override
+    public void onRecognitionSuccessful(final CloudTracker cloudTracker_, final JSONObject jsonObject_) {
+        if (jsonObject_.toString().length() &gt; 2) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                        EditText targetInformationTextField = (EditText) findViewById(R.id.on_click_cloud_tracking_target_information);
+                        targetInformationTextField.setText(jsonObject_.toString(), TextView.BufferType.NORMAL);
+                        targetInformationTextField.setVisibility(View.VISIBLE);
+                    }
+            });
+        }
+    }
+
+    @Override
+    public void onRecognitionFailed(final CloudTracker cloudTracker_, final int errorCode_, final String errorMessage_) {
+        Toast toast = Toast.makeText(getApplicationContext(), &quot;Recognition failed!&quot;, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+</code></pre>
+<p>To be able to actually start the recognition we define a button and set an anonymous <code>OnClickListener</code> which calls the <code>CloudTracker</code> recognize method.</p>
+<pre><code class="lang-java">@Override
+public void onRenderExtensionCreated(final RenderExtension renderExtension_) {
+    ...
+    Button recognizeButton = (Button) findViewById(R.id.on_click_cloud_tracking_recognize_button);
+    recognizeButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(final View view_) {
+            _cloudTracker.recognize();
+        }
+    });
+
+}
+</code></pre>
+<p><a id="ContinuousCloudRecognition"></a></p>
+<h3 id="continuous-cloud-recognition">Continuous Cloud Recognition</h3>
+<p>On-Click recognition is useful in some particular cases, but more often than not you probably want to use continuous recognition. For continuous cloud recognition we set an interval in which the <code>CloudTracker</code> automatically calls the recognize function.</p>
+<p>Since we want to make sure the <code>CloudTracker</code> finished loading and is ready to be used before we start recognitions, we we&#39;ll use the <code>onTrackerFinishedLoading</code> callback to start the continuous recognition. To do that we call <code>startContinuousRecognition</code> on the <code>CloudTracker</code> instance passing an interval in milliseconds. Since mobile internet can be quite bad, we recommend an interval between 1500 and 2000ms.</p>
+<pre><code class="lang-java">@Override
+public void onTrackerFinishedLoading(final CloudTracker cloudTracker_) {
+    cloudTracker_.startContinuousRecognition(1500);
+}
+</code></pre>
+<p>As already mentioned before internet quality isn&#39;t always the best on mobile devices. If the Wikitude SDK notices that the cloud recogntion interval was set to low, the <code>onRecognitionInterruption</code> callback method will be called. The SDK will pass an adjusted interval which should be more appropriate for the current connection speed. In our example we&#39;ll reset the <code>CloudTracker</code> interval by calling <code>startContinuousRecognition</code> passing the suggested interval.</p>
+<pre><code class="lang-java">@Override
+public void onRecognitionInterruption(final CloudTracker cloudTracker_, final double suggestedInterval_) {
+    cloudTracker_.startContinuousRecognition(suggestedInterval_);
+}
+</code></pre>
+
+            <footer id="footer">
+                &copy; 2012 -2015 <a href="http://www.wikitude.com">Wikitude GmbH</a> · <a href="http://www.wikitude.com/imprint">Imprint</a>
+            </footer>  
+        </div>    
+    </div>
+
+    <!-- TO DO: Reactivate when problems with nav are fixed
+    <script>
+    $(function(){
+            $("#toc ul").treemenu({delay:300}).openActive();
+        });
+    </script>
+    -->
+
+</body>
+    <script>
+    var lightbox = new Lightbox();
+    lightbox.load();
+    </script>
+
+</html>

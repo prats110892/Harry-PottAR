@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Wikitude SDK Android Native API 1.2.0 Documentation</title>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/docs.css">
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="css/github.min.css">
+    <link type="text/css" rel="stylesheet" href="css/default.min.css">
+    <link type="text/css" rel="stylesheet" href="css/lightbox.min-0.5.1.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery.treemenu.css">
+
+    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/highlight-8.6.min.js"></script>
+    <script type="text/javascript" src="js/lunr.min-0.5.11.js"></script>
+    <script type="text/javascript" src="js/deprecated.js"></script>
+    <script type="text/javascript" src="js/lightbox.min-0.5.1.js"></script>
+    <script type="text/javascript" src="js/jquery.treemenu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Every image referenced from a Markdown document
+            $("#content img").each(function() {
+                // Let's put a caption if there is one
+                if($(this).attr("alt"))
+                    $(this).wrap('<figure class="image"></figure>')
+                        .after('<figcaption>'+$(this).attr("alt")+'</figcaption>');
+                });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(isVersionDeprecated())
+                document.getElementById('deprecatedNote').style.display='block';
+                document.getElementById("documentationSelect").onchange = function() {
+                var selectedOption = this.value;
+                 console.log(selectedOption);
+                 window.top.location.href = "http://www.wikitude.com/developer/documentation/" + selectedOption;
+                }
+        });
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <a name="top" />
+         
+
+<div id="sidebar">
+    <div id="topnav">
+    <img src="images/150610_WT_SDK_Logo.png">
+    <h1><a href="">Documentation</a></h1>
+    <h2>Wikitude SDK Android Native API</h2>
+    
+    <div id="version">version: 1.2.0</div>
+    
+
+    
+    <select id="documentationSelect">
+        
+            <option value="android"  > Android </option>
+        
+            <option value="androidnative"  selected > Android Native API </option>
+        
+            <option value="phonegap"  > Cordova </option>
+        
+            <option value="epson"  > Epson </option>
+        
+            <option value="ios"  > iOS </option>
+        
+            <option value="iOSnative"  > iOS Native API </option>
+        
+            <option value="glass"  > Google Glass </option>
+        
+            <option value="vuzix"  > Vuzix </option>
+        
+            <option value="htmlcss"  > Web </option>
+        
+            <option value="titanium"  > Titanium </option>
+        
+            <option value="unity"  > Unity </option>
+        
+            <option value="xamarin"  > Xamarin </option>
+        
+            <option value=""  > --- </option>
+        
+            <option value="cloudrecognition"  > Cloud Recognition </option>
+        
+            <option value="targetsapi"  > Targets API </option>
+        
+    </select>
+    
+
+    <div id="deprecatedNote" class="warning" style="display:none;">Note you are viewing the documentation of a deprecated version. Please check <a href="http://www.wikitude.com/developer/documentation">www.wikitude.com/developer/documentation</a></div>
+
+    </div>
+
+    <input id="showNav" class="toggleNav" type="checkbox">
+    <label class="showNavLbl" for="showNav">Show Navigation</label>
+    <label class="hideNavLbl" for="showNav">Hide Navigation</label>
+
+    <div id="mainnav">
+    <form action="search.html"><input id="search" type="text" placeholder="Search documentation" name="q" /></form>
+    <nav id="toc">
+        
+    <ul>
+    
+        <li>
+            <a href="gettingstartedandroidnative.html#getting-started">Getting started</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="setupguideandroidnative.html#setup-guide-android-native-api">Setup Guide Android Native API</a>
+            
+        </li>
+    
+        <li>
+            <a href="supporteddevicesandroid.html#supported-android-devices">Supported Android Devices</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#how-to-obtain-a-free-trial-license">How to obtain a free trial license</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#where-should-i-enter-the-license-key">Where should I enter the license key</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="samplesnative.html#examples">Examples</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="clientrecognitionnative.html#client-recognition">Client Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionnative.html#cloud-recognition">Cloud Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="renderingnative.html#rendering">Rendering</a>
+            
+        </li>
+    
+        <li>
+            <a href="pluginsapi.html#plugins-api">Plugins API</a>
+            
+        </li>
+    
+        <li>
+            <a href="hardwarecontrolnative.html#camera-controls">Camera Controls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="toolsnative.html#wikitude-2d-tracking">Wikitude 2D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="targetmanagement.html#target-management">Target Management</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetguide.html#best-practice-for-target-images">Best practice for target images</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetimages.html#target-images">Target Images</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#wikitude-3d-tracking">Wikitude 3D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="3dtracking.html#about-wikitude-3d-tracking">About Wikitude 3D Tracking</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#license">License</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#limitations-of-the-wikitude-3d-tracking-beta">Limitations of the Wikitude 3D Tracking Beta</a>
+            
+        </li>
+    
+        <li>
+            <a href="trackingmap3d.html#creating-3d-tracking-maps">Creating 3D Tracking Maps</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking-guidelines.html#3d-tracking-guidelines-and-best-practices">3D Tracking Guidelines and best practices</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#wikitude-cloud-recognition">Wikitude Cloud Recognition</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#general-definitions">General Definitions</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#getting-started-with-the-cloud-recognition-service">Getting Started with the Cloud Recognition Service</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#authentication">Authentication</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#quota-and-limits">Quota and Limits</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#your-first-target-collections">Your first Target Collections</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#add-target-images">Add Target Images</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-cloud-archive">Generate a Cloud Archive</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-wtc-file">Generate a WTC file</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#additional-calls">Additional calls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate">Migrate</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate-from-10-to-11">Migrate from 1.0 to 1.1</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#reference">Reference</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="referenceandroidnative.html#android-native-api-javadocs">Android Native API JavaDocs</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#cloud-recognition-manager-api">Cloud Recognition Manager API</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-android-native-api-release-notes">Wikitude SDK Android Native API Release Notes</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-5">Wikitude SDK 5</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+</ul>
+
+    </nav>
+    
+    <nav id="links">
+        <ul>
+            
+        </ul>
+    </nav>
+    
+    </div>
+</div>
+        <div id="content">
+            <h2 id="how-to-obtain-a-free-trial-license">How to obtain a free trial license</h2>
+<p>The Wikitude SDK requires a valid license key to be able to run properly. An empty or missing license key will block the augmented reality view from showing any meaningful content. You will see a watermark across the screen with the words <code>License Key Missing</code>. All JavaScript API calls will be ignored and not interpreted.</p>
+<p>When downloading the Wikitude SDK you will be forwarded to the <a href="http://www.wikitude.com/developer/licenses">license generation page</a>, where a trial license key is automatically generated for you. </p>
+<p><img src="images/trial_key_license_page.png" alt=""></p>
+<p>Copy the key into your app, which will unlock the trial mode of the Wikitude SDK. The trial mode of the Wikitude SDK contains the full feature set of the Wikitude SDK but will show a <code>Trial</code> watermark across the screen.</p>
+<p>Each trial license key is valid for every application ID on every operating system. You can use the same trial license key in multiple apps. </p>
+<h2 id="where-should-i-enter-the-license-key">Where should I enter the license key</h2>
+<h3 id="android-native-api">Android Native API</h3>
+<p>To use the Wikitude Android SDK you need to provide a valid license key to the <code>onCreate</code> lifecycle method of the Wikitude SDK object. </p>
+<p>Create a <code>StartupConfiguration</code> object and pass it the license as a string and then call the <code>onCreate(getApplicationContext(), startupConfiguration)</code> method. </p>
+<pre><code>     WikitudeSDKStartupConfiguration startupConfiguration = new WikitudeSDKStartupConfiguration(WikitudeSDKConstants.WIKITUDE_SDK_KEY, CameraSettings.CameraPosition.BACK, CameraSettings.CameraFocusMode.CONTINUOUS);
+        _wikitudeSDK.onCreate(getApplicationContext(), startupConfiguration);
+</code></pre>
+            <footer id="footer">
+                &copy; 2012 -2015 <a href="http://www.wikitude.com">Wikitude GmbH</a> · <a href="http://www.wikitude.com/imprint">Imprint</a>
+            </footer>  
+        </div>    
+    </div>
+
+    <!-- TO DO: Reactivate when problems with nav are fixed
+    <script>
+    $(function(){
+            $("#toc ul").treemenu({delay:300}).openActive();
+        });
+    </script>
+    -->
+
+</body>
+    <script>
+    var lightbox = new Lightbox();
+    lightbox.load();
+    </script>
+
+</html>

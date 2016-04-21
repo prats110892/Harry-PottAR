@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Wikitude SDK Android Native API 1.2.0 Documentation</title>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/docs.css">
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="css/github.min.css">
+    <link type="text/css" rel="stylesheet" href="css/default.min.css">
+    <link type="text/css" rel="stylesheet" href="css/lightbox.min-0.5.1.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery.treemenu.css">
+
+    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/highlight-8.6.min.js"></script>
+    <script type="text/javascript" src="js/lunr.min-0.5.11.js"></script>
+    <script type="text/javascript" src="js/deprecated.js"></script>
+    <script type="text/javascript" src="js/lightbox.min-0.5.1.js"></script>
+    <script type="text/javascript" src="js/jquery.treemenu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Every image referenced from a Markdown document
+            $("#content img").each(function() {
+                // Let's put a caption if there is one
+                if($(this).attr("alt"))
+                    $(this).wrap('<figure class="image"></figure>')
+                        .after('<figcaption>'+$(this).attr("alt")+'</figcaption>');
+                });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(isVersionDeprecated())
+                document.getElementById('deprecatedNote').style.display='block';
+                document.getElementById("documentationSelect").onchange = function() {
+                var selectedOption = this.value;
+                 console.log(selectedOption);
+                 window.top.location.href = "http://www.wikitude.com/developer/documentation/" + selectedOption;
+                }
+        });
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <a name="top" />
+         
+
+<div id="sidebar">
+    <div id="topnav">
+    <img src="images/150610_WT_SDK_Logo.png">
+    <h1><a href="">Documentation</a></h1>
+    <h2>Wikitude SDK Android Native API</h2>
+    
+    <div id="version">version: 1.2.0</div>
+    
+
+    
+    <select id="documentationSelect">
+        
+            <option value="android"  > Android </option>
+        
+            <option value="androidnative"  selected > Android Native API </option>
+        
+            <option value="phonegap"  > Cordova </option>
+        
+            <option value="epson"  > Epson </option>
+        
+            <option value="ios"  > iOS </option>
+        
+            <option value="iOSnative"  > iOS Native API </option>
+        
+            <option value="glass"  > Google Glass </option>
+        
+            <option value="vuzix"  > Vuzix </option>
+        
+            <option value="htmlcss"  > Web </option>
+        
+            <option value="titanium"  > Titanium </option>
+        
+            <option value="unity"  > Unity </option>
+        
+            <option value="xamarin"  > Xamarin </option>
+        
+            <option value=""  > --- </option>
+        
+            <option value="cloudrecognition"  > Cloud Recognition </option>
+        
+            <option value="targetsapi"  > Targets API </option>
+        
+    </select>
+    
+
+    <div id="deprecatedNote" class="warning" style="display:none;">Note you are viewing the documentation of a deprecated version. Please check <a href="http://www.wikitude.com/developer/documentation">www.wikitude.com/developer/documentation</a></div>
+
+    </div>
+
+    <input id="showNav" class="toggleNav" type="checkbox">
+    <label class="showNavLbl" for="showNav">Show Navigation</label>
+    <label class="hideNavLbl" for="showNav">Hide Navigation</label>
+
+    <div id="mainnav">
+    <form action="search.html"><input id="search" type="text" placeholder="Search documentation" name="q" /></form>
+    <nav id="toc">
+        
+    <ul>
+    
+        <li>
+            <a href="gettingstartedandroidnative.html#getting-started">Getting started</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="setupguideandroidnative.html#setup-guide-android-native-api">Setup Guide Android Native API</a>
+            
+        </li>
+    
+        <li>
+            <a href="supporteddevicesandroid.html#supported-android-devices">Supported Android Devices</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#how-to-obtain-a-free-trial-license">How to obtain a free trial license</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#where-should-i-enter-the-license-key">Where should I enter the license key</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="samplesnative.html#examples">Examples</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="clientrecognitionnative.html#client-recognition">Client Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionnative.html#cloud-recognition">Cloud Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="renderingnative.html#rendering">Rendering</a>
+            
+        </li>
+    
+        <li>
+            <a href="pluginsapi.html#plugins-api">Plugins API</a>
+            
+        </li>
+    
+        <li>
+            <a href="hardwarecontrolnative.html#camera-controls">Camera Controls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="toolsnative.html#wikitude-2d-tracking">Wikitude 2D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="targetmanagement.html#target-management">Target Management</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetguide.html#best-practice-for-target-images">Best practice for target images</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetimages.html#target-images">Target Images</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#wikitude-3d-tracking">Wikitude 3D Tracking</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="3dtracking.html#about-wikitude-3d-tracking">About Wikitude 3D Tracking</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#license">License</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking.html#limitations-of-the-wikitude-3d-tracking-beta">Limitations of the Wikitude 3D Tracking Beta</a>
+            
+        </li>
+    
+        <li>
+            <a href="trackingmap3d.html#creating-3d-tracking-maps">Creating 3D Tracking Maps</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dtracking-guidelines.html#3d-tracking-guidelines-and-best-practices">3D Tracking Guidelines and best practices</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#wikitude-cloud-recognition">Wikitude Cloud Recognition</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#general-definitions">General Definitions</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#getting-started-with-the-cloud-recognition-service">Getting Started with the Cloud Recognition Service</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#authentication">Authentication</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#quota-and-limits">Quota and Limits</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#your-first-target-collections">Your first Target Collections</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#add-target-images">Add Target Images</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-cloud-archive">Generate a Cloud Archive</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-wtc-file">Generate a WTC file</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#additional-calls">Additional calls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate">Migrate</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="migration-androidnative.html#migrate-from-10-to-11">Migrate from 1.0 to 1.1</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#reference">Reference</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="referenceandroidnative.html#android-native-api-javadocs">Android Native API JavaDocs</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroidnative.html#cloud-recognition-manager-api">Cloud Recognition Manager API</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-android-native-api-release-notes">Wikitude SDK Android Native API Release Notes</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-5">Wikitude SDK 5</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+</ul>
+
+    </nav>
+    
+    <nav id="links">
+        <ul>
+            
+        </ul>
+    </nav>
+    
+    </div>
+</div>
+        <div id="content">
+            <h2 id="client-recognition">Client Recognition</h2>
+<p>This example shows how to recognize images in the viewfinder and overlay it with images. </p>
+<p>For a better understanding, here are some terms that will be used in the following and other section of this documentation related to vision-based augmented reality.</p>
+<ul>
+<li><p><strong>Target</strong>: A 2D target image and its associated extracted data that is used by the tracker to recognize an image.</p>
+</li>
+<li><p><strong>Target Collection</strong>: An archive storing a collection of 2D targets that can be recognized by the tracker. A target collection can hold up to 1000 targets. Target collections are stored as <code>.wtc</code> files</p>
+</li>
+<li><p><strong>3D Tracking Map</strong>: A tracking map is the equivalent of a target for 3D tracking. The map contains the relevant characteristics of a three-dimensional object. In order to recognize and track 3D objects you need to record a map first and then load this map. Maps are stored as <code>.wtm</code> files. </p>
+</li>
+<li><p><strong>ClientTracker</strong>: The tracker analyzes the live camera image and detects the 2D targets stored in its associated target collection. Multiple trackers can be created, however only one tracker can be active for recognition at any given time.</p>
+</li>
+</ul>
+<p><a id="SimpleClientTrackingAndroid"></a></p>
+<h3 id="simple-2d-client-tracking-android">Simple 2D Client Tracking Android</h3>
+<p>In this section we will go through the code of the <code>SimpleClientTrackingActivity</code>, which you can find in the example application under the package <code>com.wikitude.samples.recognition.client</code>. We will discuss general concepts on how to use the Wikitude Native SDK as we go along, please don&#39;t skip this section even if you are for example only interested in cloud recognition.</p>
+<p>The <code>WikitudeSDK</code> class is structured to be used in a standard Android activity and to make use of the activities life cycle events. We will use interfaces to communicate to the <code>WikitudeSDK</code> which type of rendering method we would like to use and to provide the necessary callbacks for Client- and Cloud-Trackers.</p>
+<p>First let us have a look at the declaration of the activity class. </p>
+<pre><code class="lang-java">public class SimpleClientTrackingActivity extends Activity implements ClientTrackerEventListener, ExternalRendering {
+...
+}
+</code></pre>
+<p>We subclass the standard Android activity and implement the interfaces <code>ClientTrackerEventListener</code> and <code>ExternalRendering</code>. Later on when we create the instance of the WikitudeSDK we will pass the <code>this</code> pointer of our activity to the WikitudeSDK constructor and this way indicate our chosen type of rendering. In this example we will use external rendering, for details on how to setup the rendering and the difference between internal and external rendering please read through the section on <a href="renderingnative.html">rendering</a>.</p>
+<p>The next step we will take is create an instance of the <code>WikitudeSDK</code> class. This and the <code>StartupConfiguration</code> are the only objects you will need to create by yourself, every other object will be created by factory methods of the <code>WikitudeSDK</code> instance. </p>
+<div class="warning"> 
+IMPORTANT: Do not instantiate any other class out of the Wikitude Native SDK other than the WikitudeSDK and the WikitudeSDKStartupConfiguration.
+</div>
+
+<p>We are now going through each method of the <code>SimpleClientTrackingActivity</code> class, starting with <code>onCreate</code>. In the <code>onCreate</code> method we instantiate an instance of the <code>WikitudeSDK</code>, and an instance of the <code>WikitudeSDKStartupConfiguration</code>, which will hold our license key. If you do not have a license key yet, read this chapter on how to <a href="triallicense.html">obtain a free trial key</a>. After that we are ready to propagate the onCreate life cycle event to the Wikitude SDK. It is very important that you do propagate onCreate, onPause and onResume otherwise the Wikitude SDK won&#39;t be able to properly manage its resources which will lead to unexpected behavior.</p>
+<p>After we called the WikitudeSDK onCreate method the SDK is initialized and we are now able to create a <code>ClientTracker</code>. To do that we get the <code>TrackerManager</code> from the <code>WikitudeSDK</code> instance and call <code>create2dClientTracker</code> passing the url to the WTC file. Since we are loading an asset on the device we indicate that by starting the url with the string file:///android_asset/ and add the path to the file starting from the asset root directory.</p>
+<p>To get notified when the Tracker finished loading, recognized a target and so on we register the Activity which implements ClientTrackerEventListener as a Listener on the newly created Tracker.</p>
+<pre><code class="lang-java">@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    _wikitudeSDK = new WikitudeSDK(this);
+    WikitudeSDKStartupConfiguration startupConfiguration = new WikitudeSDKStartupConfiguration(WikitudeSDKConstants.WIKITUDE_SDK_KEY);
+    _wikitudeSDK.onCreate(getApplicationContext(), startupConfiguration);
+    ClientTracker tracker = _wikitudeSDK.getTrackerManager().create2dClientTrackerFromUrl(&quot;file:///android_asset/magazine.wtc&quot;);
+    tracker.registerTrackerEventListener(this);
+}
+</code></pre>
+<p>The next important method to look at is the <code>onRenderExtensionCreated</code> method. Since we decided to use the external rendering functionality by implementing <code>ExternalRendering</code>, the <code>WikitudeSDK</code> provides us with a RenderExtension. The RenderExtension interface exposes the same methods as the standard <code>GLSurfaceView.Renderer</code>. In your custom <code>GLSurfaceView.Renderer</code> the first thing to do in every method is to always call the same method on the provided RenderExtension. To be able to that we pass the RenderExtension to the constructor of our <code>Renderer</code>, create our <code>SurfaceView</code>, initialize a <code>Driver</code> and set our <code>SurfaceView</code> as our content view.</p>
+<pre><code class="lang-java">@Override
+public void onRenderExtensionCreated(final RenderExtension renderExtension_) {
+    _glRenderer = new GLRenderer(renderExtension_);
+    _view = new CustomSurfaceView(getApplicationContext(), _glRenderer);
+    _driver = new Driver(_view, 30);
+    setContentView(_view);
+}
+</code></pre>
+<p>Next we will have a look at the <code>ClientTrackerEventListener</code> interface. The <code>onErrorLoading</code> method will be called like the name suggest when the Wikitude SDK wasn&#39;t able to load the client tracker. The most likely cause of this to happen would be that either the path to the WTC file was incorrect or the WTC was corrupted. The <code>onTrackerFinishedLoading</code> method will be called once when the tracker was successfully loaded. When the client tracker first recognizes a target it will call <code>onTargetRecognized</code> providing you with the recognized target name. When the client tracker starts tracking this target it will call <code>onTracking</code> continuously until it loses the target and finishes tracking with a call to <code>onTargetLost</code>.</p>
+<p>The <code>RecognizedTarget</code> object provided in the <code>onTracking</code> method contains information about the tracked target like the name, the distance to the target and most importantly the matrices which describe where on the camera frame the target was found. Since we need this information to draw on the target we pass the object to our renderer in the &#39;onTracking&#39; method and remove it when we lose the target in the <code>onTargetLost</code> method.</p>
+<pre><code class="lang-java">@Override
+public void onErrorLoading(final ClientTracker clientTracker_, final String errorMessage_) {
+    Log.v(TAG, &quot;onErrorLoading: &quot; + errorMessage_);
+}
+
+@Override
+public void onTrackerFinishedLoading(final ClientTracker clientTracker_, final String trackerFilePath_) {
+
+}
+
+@Override
+public void onTargetRecognized(final ClientTracker tracker_, final String targetName_) {
+
+}
+
+@Override
+public void onTracking(final ClientTracker tracker_, final RecognizedTarget recognizedTarget_) {
+    _glRenderer.setCurrentlyRecognizedTarget(recognizedTarget_);
+}
+
+@Override
+public void onTargetLost(final ClientTracker tracker_, final String targetName_) {
+    _glRenderer.setCurrentlyRecognizedTarget(null);
+}
+</code></pre>
+<p><a id="ExtendedClientTracking"></a></p>
+<h3 id="2d-extended-client-tracking-android">2D Extended Client Tracking Android</h3>
+<p>Extended tracking is an optional mode you can set for each target separately. In this mode the Wikitude SDK will try to continue to scan the environment of the user even if the original target image is not in view anymore. So the tracking extends beyond the limits of the original target image. The performance of this feature depends on various factors like computing power of the device, background texture and objects.</p>
+<p>Based on the previous sample, to enable Extended Tracking for a tracker you need to provide a String array which defines which targets should be extended. In this sample we simply set a wildcard <code>*</code> so that all targets in this tracker are extended. </p>
+<pre><code>ClientTracker tracker = _wikitudeSDK.getTrackerManager().create2dClientTracker(&quot;file:///android_asset/magazine.wtc&quot;, new String[]{&quot;*&quot;});
+</code></pre><h3 id="3d-client-tracking-android">3D Client Tracking Android</h3>
+<p>In this example we will take a look at how to use the Wikitude <code>TrackingMapRecorder</code> and 3D ClientTracker to enable 3D Tracking. If you haven&#39;t already done so please read through the first section on 2D Tracking before continuing here. Essential concepts like how to setup rendering or how to use a Wikitude Tracker are explained there and won&#39;t be repeated here. Similar if you don&#39;t already know why we need to record a Tracking Map or what to expect from 3D Tracking in general please read through the <a href="3dtracking.html">introduction to 3D tracking</a>.</p>
+<p>After we setup our activity to use <code>ExternalRendering</code> we will initialize the user interface in the <code>onRenderExtensionCreated</code> callback method. Let&#39;s look at the first lines of code below.</p>
+<pre><code class="lang-java">@Override
+public void onRenderExtensionCreated(final RenderExtension renderExtension_) {
+
+    ... setup GL view ...
+
+        showStartDialog();
+
+    ...
+}
+
+private void showStartDialog() {
+    AlertDialog.Builder builder = new AlertDialog.Builder(ClientTracking3DActivity.this);
+    builder.setNegativeButton(&quot;Leave Example&quot;, new DialogInterface.OnClickListener() {
+        ...
+    });
+    builder.setPositiveButton(&quot;Start Recording&quot;, new DialogInterface.OnClickListener() {
+        public void onClick(DialogInterface dialog, int id) {
+            _wikitudeSDK.getTrackingMapRecorder().startRecording();
+            _trackingQualityIndicator.setVisibility(View.VISIBLE);
+            _stopButton.setVisibility(View.VISIBLE);
+            _stopButton.setEnabled(true);
+        }
+    });
+
+    ...
+
+    dialog.show();
+}
+</code></pre>
+<p>The first thing we do in the <code>onRenderExtensionCreated</code> method after setting up rendering is calling the private method <code>showStartDialog</code>. The purpose of the start dialog is to provide the user with some information about what he needs to do and a way to start the map recording. We activate the positive button of the AlertDialog by setting the title to <code>Start Recording</code> and passing an <code>OnClickListener</code>. In this <code>OnClickListener</code> we start the Tracking Map recording by getting the <code>TrackingMapRecorder</code> from the <code>WikitudeSDK</code> instance and calling <code>startRecording</code>. We also update the UI by setting the necessary components to visible. We will talk about what those components do later in this section.</p>
+<pre><code class="lang-java">@Override
+public void onRenderExtensionCreated(final RenderExtension renderExtension_) {
+
+    ... setup GL view ...
+    ... show start dialog ...
+
+    _wikitudeSDK.getTrackingMapRecorder().registerTrackingMapRecorderEventListener(new TrackingMapRecorderEventListener() {
+        @Override
+        public void onFinishedSavingTrackingMap(File file) {
+            ...
+        }
+
+        @Override
+        public void onErrorSavingTrackingMap(String errorMessage) {
+            ...
+        }
+
+        @Override
+        public void onTrackingMapRecordingQualityChanged(final int oldTrackingQuality, final int newTrackingQuality) {
+            ...
+        }
+
+        @Override
+        public void onTrackingMapRecordingCanceled() {
+            ...
+        }
+    });
+
+    ...
+</code></pre>
+<p>The next thing we do in the <code>onRenderExtensionCreated</code> method is registering a <code>TrackingMapRecorderEventListener</code> by calling <code>registerTrackingMapRecorderEventListener</code> on the <code>TrackingMapRecorder</code> we get from the WikitudeSDK instance. The <code>TrackingMapRecorderEventListener</code> interface exposes several callbacks to us. In the following we will go through the implementation of each of them one by one, starting with the <code>onFinishedSavingTrackingMap</code> method.</p>
+<pre><code class="lang-java">_wikitudeSDK.getTrackingMapRecorder().registerTrackingMapRecorderEventListener(new TrackingMapRecorderEventListener() {
+    @Override
+    public void onFinishedSavingTrackingMap(File file) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                saveMessage.setVisibility(View.INVISIBLE);
+                _stopButton.setVisibility(View.INVISIBLE);
+            }
+        });
+        _wikitudeSDK.getTrackerManager().create3dClientTracker(file.getAbsolutePath()).registerTrackerEventListener(ClientTracking3DActivity.this);
+    }
+    ...
+}
+</code></pre>
+<p>The <code>onFinishedSavingTrackingMap</code> callback will be called when the <code>TrackingMapRecorder</code> successfully finished saving the recording to file. We will react to that fact by getting the UI ready for tracking by removing all visible UI components. After we cleared the UI we get the <code>TrackingManager</code> from the <code>WikitudeSDK</code> instance and create a new 3D ClientTracker by calling <code>create3dClientTracker</code> passing the path to the newly created Tracking Map file. As a result of this call the <code>WikitudeSDK</code> will pass back to us the <code>ClientTracker</code> instance it just created for us. We use it right away to register our Activity as a <code>TrackerEventListener</code>. The implementation of the <code>TrackerEventListener</code> callbacks is the same as in the first example of this chapter so we won&#39;t go into detail about it here.</p>
+<pre><code class="lang-java">_wikitudeSDK.getTrackingMapRecorder().registerTrackingMapRecorderEventListener(new TrackingMapRecorderEventListener() {
+
+    ...
+
+    @Override
+    public void onErrorSavingTrackingMap(String errorMessage) {
+        Log.v(TAG, errorMessage);
+    }
+
+    ...
+}
+</code></pre>
+<p>The second callback method of the <code>TrackingMapRecorderEventListener</code> is the <code>onErrorSavingTrackingMap</code>. This method will be called by the <code>TrackingMapRecorder</code> if there was an error saving the Tracking Map from memory to file. This could be for several reasons but since Tracking Maps can get quite large with longer recordings the most likely one is that there is not enough storage space left on the device. In this example we just log the error message but if you are using the <code>TrackingMapRecorder</code> in a production app, you probably want to react on the error in some way.</p>
+<pre><code class="lang-java">_wikitudeSDK.getTrackingMapRecorder().registerTrackingMapRecorderEventListener(new TrackingMapRecorderEventListener() {
+
+    ...
+
+    @Override
+    public void onTrackingMapRecordingQualityChanged(final int oldTrackingQuality, final int newTrackingQuality) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                _currentTrackingQuality = newTrackingQuality;
+                switch (newTrackingQuality) {
+                    case -1:
+                        _trackingQualityIndicator.setBackgroundColor(Color.parseColor(&quot;#FF3420&quot;));
+                        _trackingQualityIndicator.setText(R.string.tracking_quality_indicator_bad);
+                        break;
+                    case 0:
+                        _trackingQualityIndicator.setBackgroundColor(Color.parseColor(&quot;#FFD900&quot;));
+                        _trackingQualityIndicator.setText(R.string.tracking_quality_indicator_average);
+                        break;
+                    default:
+                        _trackingQualityIndicator.setBackgroundColor(Color.parseColor(&quot;#6BFF00&quot;));
+                        _trackingQualityIndicator.setText(R.string.tracking_quality_indicator_good);
+                }
+            }
+        });
+    }
+
+    ...
+}
+</code></pre>
+<p>Since it can be hard to tell when your recording reached sufficient quality to be used for tracking, the <code>TrackingMapRecorder</code> will update us in the <code>onTrackingMapRecordingQualityChanged</code> method about the current map status. It will pass <code>-1</code> if the least necessary quality isn&#39;t reached yet, <code>0</code> as soon as tracking with this map will be ok but not great and something higher than <code>0</code> when the desired quality was reached. We react to all three indications by setting the <code>trackingQualityIndicator</code> UI component to the appropriate state.</p>
+<pre><code class="lang-java">_wikitudeSDK.getTrackingMapRecorder().registerTrackingMapRecorderEventListener(new TrackingMapRecorderEventListener() {
+
+    ...
+
+    @Override
+    public void onTrackingMapRecordingCanceled() {
+        showStartDialog();
+    }
+
+    ...
+}
+</code></pre>
+<p>The last of the <code>TrackingMapRecorderEventListener</code> callbacks will be called by the <code>TrackingMapRecorder</code> after a recording was canceled. After you canceled a recording you will need to wait till this method is called to start a new map recording. This is exactly what we do in this example by showing the initial start dialog to the user.</p>
+<pre><code class="lang-java">@Override
+public void onRenderExtensionCreated(final RenderExtension renderExtension_) {
+    ...
+
+    _stopButton = (Button) findViewById(R.id.client_tracking_3d_stop_recording);
+    _stopButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            _stopButton.setVisibility(View.INVISIBLE);
+            _trackingQualityIndicator.setVisibility(View.INVISIBLE);
+            if (_currentTrackingQuality &gt; 0) {
+                saveMessage.setVisibility(View.VISIBLE);
+                deleteTemporaryTrackingMap();
+                _wikitudeSDK.getTrackingMapRecorder().stopRecording(TRACKING_MAP_FILENAME);
+            } else {
+                showConfirmStopDialog();
+            }
+        }
+    });
+
+    ...
+}
+</code></pre>
+<p>After we implemented all TrackingMapRecorder callbacks the last thing we do in the <code>onRenderExtionsionCreated</code> method is implement the <code>OnClickListener</code> of the &quot;Stop Recording&quot; button. When the &quot;Stop Recording&quot; button is clicked the first thing we do is clear up the UI. Then we check if the last tracking quality indicator value was already high enough for the best possible tracking quality. If it was we show a save message to the user, clean up the last recording if there is one and stop and save the recording by getting the <code>TrackingMapRecorder</code> and calling <code>stopRecording</code> passing the name of the file the map should be stored in. Please note that you only need to pass the name of the file without any path information. All recordings will be save in external storage under <code>Android/data/com.wikitude.nativesdksampleapp/files</code>.</p>
+<p>If the tracking quality indicator value indicates a bad or average recording quality we show the user a confirmation dialog, by calling the private method <code>showConfirmStopDialog</code>.</p>
+<pre><code class="lang-java">private void showConfirmStopDialog() {
+    AlertDialog.Builder builder = new AlertDialog.Builder(ClientTracking3DActivity.this);
+    builder.setNegativeButton(&quot;Restart&quot;, new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            _wikitudeSDK.getTrackingMapRecorder().cancelRecording();
+        }
+    });
+    builder.setPositiveButton(&quot;Continue&quot;, new DialogInterface.OnClickListener() {
+        public void onClick(DialogInterface dialog, int id) {
+            deleteTemporaryTrackingMap();
+            _wikitudeSDK.getTrackingMapRecorder().stopRecording(TRACKING_MAP_FILENAME);
+        }
+    });
+    builder.setMessage(&quot;In order to experience a well working 3d tracking example, please continue recording until the quality indicator says &#39;Good&#39;.&quot;)
+            .setTitle(&quot;Tracking Map quality not sufficient&quot;);
+    AlertDialog dialog = builder.create();
+    dialog.setCancelable(false);
+    dialog.show();
+}
+</code></pre>
+<p>In the confirm stop dialog we give the user the option to either restart the recording or continue to save the recording. If the user decides to restart we cancel the recording by calling <code>cancelRecording</code> on the <code>TrackingMapRecorder</code>. If the user decides to use the map anyway we stop the recording like above. </p>
+
+            <footer id="footer">
+                &copy; 2012 -2015 <a href="http://www.wikitude.com">Wikitude GmbH</a> · <a href="http://www.wikitude.com/imprint">Imprint</a>
+            </footer>  
+        </div>    
+    </div>
+
+    <!-- TO DO: Reactivate when problems with nav are fixed
+    <script>
+    $(function(){
+            $("#toc ul").treemenu({delay:300}).openActive();
+        });
+    </script>
+    -->
+
+</body>
+    <script>
+    var lightbox = new Lightbox();
+    lightbox.load();
+    </script>
+
+</html>
